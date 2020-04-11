@@ -1,0 +1,88 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <script>
+            a = [];
+            a['a'] = [''];
+            a['a']['b'] = 0;
+
+            //a['a']['b'] = 1;
+            console.log(a['a']['b']);
+
+            function toString(user){
+                return "O usuário mora em " + user.city+" / " + user.uf +
+                ", no bairro "+user.neighborhood+", na rua \"" + user.street+"\" com nº "+
+                user.number+".";
+            }
+
+            function even(x, y){
+                for(var i = x; i <= y; i++){
+                    if(i%2==0){
+                        console.log(i);
+                    }
+                }
+            }
+
+            function hasSkill(skills){
+                return skills.includes("Javascript")?true:false;
+            }
+
+            function experience(years){
+                if(years >=0 && years <1){
+                    return "Iniciante";
+                }else if(years >=1 && years < 3){
+                    return "Intermediário";
+                }else if(years >=3){
+                    return "Jedi Master";
+                }
+            }
+
+            function userToString(users){
+                var result = "";
+                for(var i=0;i<users.length;i++){
+                    result += users[i].name+" possui as habilidades: ";
+                    for(var j=0;j<users[i].skills.length;j++){
+                        result += users[i].skills[j];
+                        if(j != users[i].skills.length-1){
+                            result += ", ";
+                        }
+                    }
+                    result += "\n";
+                }
+                console.log(result);
+            }
+            
+            var users = [
+                {
+                    name: "aline",
+                    skills: ["js", 'react']
+                },
+                {
+                    name: 'diego',
+                    skills: ['vue', 'elixir']
+                }
+            ];
+
+            userToString(users);
+
+            var address = {
+                street: "RUA TAL",
+                number: 1,
+                neighborhood: "BAIRRO TAL",
+                city: "CIDADE TAL",
+                uf: "UF TAL"
+            };
+
+            console.log(toString(address));
+
+            //pares(32, 321);
+
+            skills = ["Javascript", "HTML", "CSS"];
+            console.log(hasSkill(skills));
+
+            console.log(experience(1.67));
+        </script>
+    </body>
+</html>
