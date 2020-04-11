@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset='UTF-8'>
+    </head>
+
+    <body>
+        <div id="app">
+            <button id="pushme" onmouseover="showAlert()">Push me</button>
+            <button id="pushme2" onclick="showAlert()">Push me</button>
+            <input onkeypress="showAlert()"/>
+        </div>
+
+        <div id="jun">
+            <button class="button">Push me</button>
+            <input  type="text" name="ju" id="no"/>
+        </div>
+
+        <script>
+            function showAlert(){
+                alert("ALERT");
+            }
+
+            var inputElement = document.getElementById("no");
+            var buttonElement = document.getElementsByTagName("button");
+            var buttonElement2 = document.getElementsByClassName("button");
+
+            //query selector
+            var inputElement2 = document.querySelector("div#app input");
+            //pelos atributos
+            var buttonElement3 = document.querySelector("button[onclick='showAlert()']");
+            //selecionar todos
+            var buttonElement4 = document.querySelectorAll("button");
+
+            console.log(buttonElement4);
+
+            var button = document.querySelector("button.button");
+            var input = document.querySelector("input[name=ju]");
+
+            button.onclick = function(){
+                var text = input.value;
+                alert(text);
+            }
+
+            //criando elemento do DOM
+            var linkElement = document.createElement("a");
+            linkElement.setAttribute('href',"http://localhost");
+
+            var textElement = document.createTextNode('texto nodo');
+            linkElement.appendChild(textElement);
+
+            var containerElement = document.querySelector("div#app");
+            containerElement.appendChild(linkElement);
+
+            //removendo elemento do DOM
+             var removedElement = document.querySelector("#pushme2");
+             containerElement.removeChild(removedElement);
+            
+             //alterando o estilo de um elemento
+             var buttonPushMe = querySelector('.button');
+             buttonPushMe.style.width = 100; 
+        </script>
+    </body>
+
+</html>
